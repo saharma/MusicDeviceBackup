@@ -1,0 +1,60 @@
+ 
+
+
+ for (int i=0; i<keyList.getLength(); i+=2){
+
+            //print all keys in first dict
+            Node keyNode = keyList.item(i).getFirstChild();
+            Node valueNode = keyList.item(i+1).getFirstChild();
+            System.out.println("key: " + keyNode.getNodeValue());
+
+
+First print of outermost reveals that the xml file contains Tracks and Playlists.
+
+
+Root :plist
+Dict: dict
+Children: 20
+key: Major Version
+key: Minor Version
+key: Date
+key: Application Version
+key: Features
+key: Show Content Ratings
+key: Music Folder
+key: Library Persistent ID
+key: Tracks
+key: Playlists
+
+///////Creating tables/////
+
+CREATE TABLE Tracks(
+id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+Track_ID INT(11) NOT NULL, 
+Name VARCHAR(50) NOT NULL,
+Artist VARCHAR(50) NOT NULL,
+Album VARCHAR(50) NOT NULL,
+Genre VARCHAR(50) NOT NULL,
+Year INT(11) NOT NULL,
+Size INT(11) NOT NULL)
+Playlist_ID INT(11) NULL,
+Library__ID INT(11) NULL);
+
+CREATE TABLE Playlist(
+Name VARCHAR(50) NOT NULL,
+ID INT(11) NOT NULL, //(PK)
+Playlist_ID INT(11) NOT NULL,
+Library__ID INT(11) NULL); 
+
+CREATE TABLE Library(
+ID INT(11) NOT NULL, //(PK)
+Library_Persistent_ID VARCHAR(50) NOT NULL);
+
+Alter table track
+FOREIGN KEY (Playlist_ID) REFERENCES Playlist (ID);
+FOREIGN KEY (Library_ID) REFERENCES Library (ID);
+
+Alter table playlist
+FOREIGN KEY (Library_ID) REFERENCES Library (ID);
+
+
