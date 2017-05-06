@@ -14,11 +14,9 @@ this.library_ID = library_ID;
 
 }
 
-
+var countColumn = 0;
+jQuery('document').ready(function(){
 //SHOW TRACKS - FUNCTION IN LIBRARY.HTML
-
-    $(document).ready(function () {
-
         $("#showTrackButton").click(function () {
             $.ajax({
                 type: "GET",
@@ -26,23 +24,35 @@ this.library_ID = library_ID;
 
                 success: function (trackList) {
                     $.each(trackList, function (index, value) {
+
+                        countColumn = countColumn + 1;
+
                         $('#trackHolder').append("<tr>" +
+                            "<td>" + countColumn + "</td>" +
                             "<td>" + value.track_id + "</td>" +
                             "<td>" + value.name + "</td>" +
                             "<td>" + value.artist + "</td>" +
                             "<td>" + value.album + "</td>" +
                             "<td>" + value.genre + "</td>" +
                             "<td>" + value.year + "</td>" +
-                            "<td>" + value.size + "</td>" +
-                            "<td>" + value.library_ID + "</td>"
+                            "<td>" + value.size + "</td>"
                         + "</tr>"
                         );
 
+
                     });
+
+                    $('#trackTable').DataTable();
 
                 }});
 
+
+
+            $("#trackData").show();
+
         });
+
+
 
 
     });
