@@ -8,6 +8,11 @@ import java.io.Serializable;
  * Created by saharmohamedali on 30/04/2017.
  */
 
+@NamedQueries(
+        @NamedQuery(name = "getAllTracks", query = "select id from track; select track_id from track; select name from track; select artist from track;  select album from track" +
+                "; select genre from track; select year from track; select size from track")
+)
+
 @Entity
 @Table(name="track")
 public class track implements Serializable {
