@@ -1,7 +1,5 @@
 package mdbu.ejb;
 
-import mdbu.entities.track;
-
 import java.util.Collection;
 
 /**
@@ -9,5 +7,5 @@ import java.util.Collection;
  */
 public interface trackService {
 
-    Collection<track> getAllTracks();
+    Collection<?> getAllTracks();
 }

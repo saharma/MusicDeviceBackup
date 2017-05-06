@@ -9,8 +9,7 @@ import java.io.Serializable;
  */
 
 @NamedQueries(
-        @NamedQuery(name = "getAllTracks", query = "select id from track; select track_id from track; select name from track; select artist from track;  select album from track" +
-                "; select genre from track; select year from track; select size from track")
+        @NamedQuery(name = "getAllTracks", query = "from track")
 )
 
 @Entity
@@ -33,7 +32,7 @@ public class track implements Serializable {
     //Playlist null if empty
 
     //join playlist id to playlist id
-    @Column(name="Playlist") private Integer playlist;
+    //@Column(name="Playlist") private Integer playlist;
     //Library Persistent ID
     //join column
     @Column(name="Library_ID") private String library_ID;

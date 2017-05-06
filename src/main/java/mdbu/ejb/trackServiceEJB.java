@@ -20,7 +20,7 @@ public class trackServiceEJB implements  trackService{
     private trackDao trackDao;
 
 
-    public Collection<track> getAllTracks() {
+    public Collection<?> getAllTracks() {
         return trackDao.getAllTracks();
     }
 }

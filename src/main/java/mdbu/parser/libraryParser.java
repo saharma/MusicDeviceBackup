@@ -13,9 +13,9 @@ import java.util.Collection;
 
 public class libraryParser {
 
-    public static void main(String[] args) {
+    public static Collection<track> parseTrack(String docString) {
 
-        Document xmlDoc = getDocument("library1.xml");
+        Document xmlDoc = getDocument(docString);
 
         //ROOT - plist
         Node root = xmlDoc.getDocumentElement();
@@ -43,7 +43,6 @@ public class libraryParser {
         for (int i = 0; i < libraryDictKeys.getLength(); i += 2) {
 
 
-
             //print all keys in first dict
             Node libraryDataNode = libraryDictKeys.item(i).getFirstChild();
             //print value nodes - string, date, integer etc
@@ -52,10 +51,9 @@ public class libraryParser {
 
 
             if (libraryDataNode.getNodeValue().equals("Library Persistent ID")) {
-           //     System.out.println(libraryDataNode.getNodeValue() + " : " + libraryDataValueNode.getNodeValue());
+                //     System.out.println(libraryDataNode.getNodeValue() + " : " + libraryDataValueNode.getNodeValue());
 
                 library_id = libraryDataValueNode.getNodeValue();
-
 
 
             }
@@ -82,14 +80,12 @@ public class libraryParser {
                     track_id = Integer.valueOf(trackIDKey.getNodeValue());
 
 
-
                     NodeList trackDataKeys = trackDicts.item(j + 1).getChildNodes();
 
 
                     for (int k = 0; k < trackDataKeys.getLength(); k += 2) {
                         Node trackKey = trackDataKeys.item(k).getFirstChild();
                         Node trackValue = trackDataKeys.item(k + 1).getFirstChild();
-
 
 
                         if (trackKey.getNodeValue().equals("Name")) {
@@ -112,19 +108,6 @@ public class libraryParser {
                         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
                     }
 
                     track newTrack = new track(track_id, name, artist, album, genre, year, size, library_id);
@@ -137,10 +120,12 @@ public class libraryParser {
 
         }
 
-        for(track t: tracks){
-            System.out.print(t);
-            System.out.println("");}
+       // for (track t : tracks) {
+       //     System.out.print(t);
+       //     System.out.println("");
+      //  }
 
+        return tracks;
     }
 
 

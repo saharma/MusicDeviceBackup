@@ -1,7 +1,6 @@
 package mdbu.rest;
 
 import mdbu.ejb.trackService;
-import mdbu.entities.track;
 
 import javax.ejb.EJB;
 import javax.ws.rs.GET;
@@ -21,7 +20,7 @@ public class trackRest {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON) @Path("/getAllTracks")
-    public Collection<track> getAllTracks(){
+    public Collection<?> getAllTracks(){
         return trackService.getAllTracks();
     }
 

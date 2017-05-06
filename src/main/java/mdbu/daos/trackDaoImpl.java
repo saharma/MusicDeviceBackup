@@ -1,14 +1,11 @@
 package mdbu.daos;
 
-import mdbu.entities.track;
-
 import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Created by saharmohamedali on 05/05/2017.
@@ -24,10 +21,10 @@ public class trackDaoImpl implements trackDao {
     EntityManager em;
 
 
-    public Collection<track> getAllTracks(){
+    public Collection<?> getAllTracks(){
         Query query = em.createNamedQuery("getAllTracks");
-        //List<track> list = query.getResultList();
-        return (List<track>) query.getResultList();
+        Collection<?> results = query.getResultList();
+        return results;
     }
 
 //    public void addTracks(List<track> tracks){

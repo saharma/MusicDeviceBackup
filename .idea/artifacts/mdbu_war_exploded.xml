@@ -13,6 +13,7 @@
           <element id="library" level="project" name="Maven: com.sun.mail:javax.mail:1.5.0" />
           <element id="library" level="project" name="Maven: com.sun.jersey:jersey-core:1.13" />
           <element id="library" level="project" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0" />
+          <element id="library" level="project" name="Maven: org.jboss.javaee:jboss-transaction-api:1.0.1.GA" />
         </element>
       </element>
       <element id="directory" name="META-INF">
