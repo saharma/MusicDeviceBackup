@@ -1,9 +1,9 @@
 mdbu/rest/trackRest.class
-mdbu/parser/libraryParser.class
 mdbu/daos/trackDao.class
 mdbu/daos/trackDaoImpl.class
-mdbu/entities/playlist.class
-mdbu/entities/track.class
+mdbu/parser/DataWatcherAndImportEJB.class
 mdbu/ejb/trackServiceEJB.class
-mdbu/entities/library.class
+mdbu/entities/Library.class
+mdbu/entities/Track.class
 mdbu/ejb/trackService.class
+mdbu/entities/Playlist.class

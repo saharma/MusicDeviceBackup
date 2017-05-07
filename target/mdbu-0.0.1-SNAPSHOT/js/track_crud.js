@@ -2,14 +2,12 @@
  * Created by saharmohamedali on 06/05/2017.
  */
 
-var track = function(track_id, name, artist, album, genre, year, size, library_ID) {
+var track = function(track_id, name, artist, album, genre, library_ID) {
 this.track_id = track_id;
 this.name = name;
 this.artist = artist;
 this.album = album;
 this.genre = genre;
-this.year = year;
-this.size = size;
 this.library_ID = library_ID;
 
 }
@@ -35,8 +33,6 @@ jQuery('document').ready(function() {
                         "<td contenteditable>" + value.artist + "</td>" +
                         "<td contenteditable>" + value.album + "</td>" +
                         "<td contenteditable>" + value.genre + "</td>" +
-                        "<td contenteditable>" + value.year + "</td>" +
-                        "<td contenteditable>" + value.size + "</td>"
                         + "</tr>"
                     );
 
@@ -45,8 +41,7 @@ jQuery('document').ready(function() {
 
                 $('#trackTable').DataTable({
                     "aLengthMenu": [[10, 25, 50, 100, 200, 500, 1000, -1], [10, 25, 50, 100, 200, 500, 1000, "All"]],
-                    iDisplayLength: 20,
-                    bStateSave: true
+                    iDisplayLength: 10,
 
                 });
 
@@ -55,6 +50,7 @@ jQuery('document').ready(function() {
 
 
         $("#trackData").show();
+        $("#hideTracksButton").show();
 
     });
 
@@ -66,12 +62,10 @@ jQuery('document').ready(function() {
         var artist = $("#Artist").val();
         var album = $("#Album").val();
         var genre = $("#Genre").val();
-        var year = $("#Year").val();
-        var size = $("#Size").val();
         var library_ID = "69A7F174F7AEE335";
-        var myTrack = new track(track_id, name, artist, album, genre, year, size, library_ID);
+        var myTrack = new track(track_id, name, artist, album, genre, library_ID);
         alert("Track ID: " + track_id + "Name: " + name + "Artist: " + artist +
-            "Album: " + album + "Genre: " + genre + "Year: " + year +"Size: " + size);
+            "Album: " + album + "Genre: " + genre);
 
 
         $.ajax({
@@ -90,8 +84,10 @@ jQuery('document').ready(function() {
 
     });
 
-});
 
 $("#hideTracksButton").click(function() {
-    $("#trackHolder").empty();
+    $("#trackData").hide();
+});
+
+
 });

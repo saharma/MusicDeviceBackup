@@ -14,7 +14,7 @@ import java.io.Serializable;
         })
 
 @Entity
-@Table(name="Track")
+@Table(name="track")
 public class Track implements Serializable {
     
     
@@ -28,8 +28,6 @@ public class Track implements Serializable {
     @Column(name="Artist") private String artist;
     @Column(name="Album") private String album;
     @Column(name="Genre") private String genre;
-    @Column(name="Year") private Integer year;
-    @Column(name="Size") private Integer size;
     //Playlist null if empty
 
     //join Playlist id to Playlist id
@@ -43,14 +41,12 @@ public class Track implements Serializable {
     public Track(){}
 
     public Track(Integer track_id, String name, String artist, String album, String genre,
-                 Integer year, Integer size, String library_ID) {
+                 String library_ID) {
         this.track_id = track_id;
         this.name = name;
         this.artist = artist;
         this.album = album;
         this.genre = genre;
-        this.year = year;
-        this.size = size;
         this.library_ID = library_ID;
     }
 
@@ -103,23 +99,6 @@ public class Track implements Serializable {
         this.genre = genre;
     }
 
-   
-    public Integer getYear() {
-        return year;
-    }
-
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
-    public Integer getSize() {
-        return size;
-    }
-
-    public void setSize(Integer size) {
-        this.size = size;
-    }
-
     public String getLibrary_ID() {
         return library_ID;
     }
@@ -133,7 +112,7 @@ public class Track implements Serializable {
     @Override
     public String toString(){
         return "Track ID: "+this.track_id + " Name: " +this.name + " Artist: " + this.artist + " Album: " + this.album + " Genre: "
-                + this.genre  +  " Size: " + this.size + " Year: " + this.year + " Library: " + library_ID;
+                + this.genre  +  " Size: " + " Library: " + library_ID;
     }
 }
 

@@ -65,8 +65,6 @@ public class libraryParser {
                 String artist = null;
                 String album = null;
                 String genre = null;
-                Integer size = null;
-                Integer year = null;
 
                 NodeList trackDicts = libraryDictKeys.item(i + 1).getChildNodes();
 
@@ -100,17 +98,11 @@ public class libraryParser {
                         if (trackKey.getNodeValue().equals("Genre")) {
                             genre = trackValue.getNodeValue();
                         }
-                        if (trackKey.getNodeValue().equals("Size")) {
-                            size = Integer.valueOf(trackValue.getNodeValue());
-                        }
-                        if (trackKey.getNodeValue().equals("Year")) {
-                            year = Integer.valueOf(trackValue.getNodeValue());
-                        }
 
 
                     }
 
-                    Track newTrack = new Track(track_id, name, artist, album, genre, year, size, library_id);
+                    Track newTrack = new Track(track_id, name, artist, album, genre, library_id);
 
                     tracks.add(newTrack);
 
