@@ -50,7 +50,7 @@ CREATE TABLE Library(
 ID INT(11) NOT NULL, //(PK)
 Library_Persistent_ID VARCHAR(50) NOT NULL);
 
-Alter table track
+Alter table Track
 FOREIGN KEY (Playlist_ID) REFERENCES Playlist (ID);
 FOREIGN KEY (Library_ID) REFERENCES Library (ID);
 

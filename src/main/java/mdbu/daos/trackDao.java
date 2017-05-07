@@ -1,5 +1,7 @@
 package mdbu.daos;
 
+import mdbu.entities.Track;
+
 import javax.ejb.Local;
 import java.util.Collection;
 
@@ -10,5 +12,19 @@ import java.util.Collection;
 @Local
 public interface trackDao {
 
+    void add(Track tack);
+
+    Track getByID(Integer id);
+
     Collection<?> getAllTracks();
+
+    void update(Track track);
+
+    void remove(Integer track_id);
+
+
+
+
+
+
 }

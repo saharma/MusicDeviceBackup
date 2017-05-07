@@ -1,6 +1,6 @@
 package mdbu.parser;
 
-import mdbu.entities.track;
+import mdbu.entities.Track;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -13,7 +13,7 @@ import java.util.Collection;
 
 public class libraryParser {
 
-    public static Collection<track> parseTrack(String docString) {
+    public static Collection<Track> parseTrack(String docString) {
 
         Document xmlDoc = getDocument(docString);
 
@@ -30,13 +30,13 @@ public class libraryParser {
         //libraryDict child Noders are key Nodes - Major version, Tracks, Playlist, Array etc
         NodeList libraryDictKeys = libraryDict.getChildNodes();
 
-        Collection<track> tracks = new ArrayList<track>();
+        Collection<Track> tracks = new ArrayList<Track>();
 
         //First dict children
         //+2 for just key nodes
 
 
-        //Following loop contains, tracks, playlist & library Persistent ID !!! START HERE
+        //Following loop contains, tracks, Playlist & Library Persistent ID !!! START HERE
 
         String library_id = null;
 
@@ -72,7 +72,7 @@ public class libraryParser {
 
 
                 //loop for inner dict
-                // returns track key (track ID)
+                // returns Track key (Track ID)
                 for (int j = 0; j < trackDicts.getLength(); j += 2) {
 
 
@@ -110,7 +110,7 @@ public class libraryParser {
 
                     }
 
-                    track newTrack = new track(track_id, name, artist, album, genre, year, size, library_id);
+                    Track newTrack = new Track(track_id, name, artist, album, genre, year, size, library_id);
 
                     tracks.add(newTrack);
 
@@ -120,7 +120,7 @@ public class libraryParser {
 
         }
 
-       // for (track t : tracks) {
+       // for (Track t : tracks) {
        //     System.out.print(t);
        //     System.out.println("");
       //  }

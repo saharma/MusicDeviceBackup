@@ -1,6 +1,6 @@
 package mdbu.parser;
 
-import mdbu.entities.track;
+import mdbu.entities.Track;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -75,9 +75,9 @@ public class DataWatcherAndImportEJB {
                             if(fileName.toString().endsWith(".xml")){
                                 System.out.println("Found XML File");
                                 long startTime = System.currentTimeMillis();
-                                Collection<track> tobePersisted = libraryParser.parseTrack(relPathToFilename);
+                                Collection<Track> tobePersisted = libraryParser.parseTrack(relPathToFilename);
                                 System.out.println("Persisting Entities");
-                                for(track track: tobePersisted){
+                                for(Track track: tobePersisted){
 
                                     try {
                                         UserTransaction uTx = sessionContext.getUserTransaction();

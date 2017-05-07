@@ -8,13 +8,14 @@ import java.io.Serializable;
  * Created by saharmohamedali on 30/04/2017.
  */
 
-@NamedQueries(
-        @NamedQuery(name = "getAllTracks", query = "from track")
-)
+@NamedQueries({
+        @NamedQuery(name = "getAllTracks", query = "from Track"),
+        @NamedQuery(name = "removeTrack", query = "from Track where track_id = track_id")
+        })
 
 @Entity
-@Table(name="track")
-public class track implements Serializable {
+@Table(name="Track")
+public class Track implements Serializable {
     
     
     @Id
@@ -31,18 +32,18 @@ public class track implements Serializable {
     @Column(name="Size") private Integer size;
     //Playlist null if empty
 
-    //join playlist id to playlist id
-    //@Column(name="Playlist") private Integer playlist;
+    //join Playlist id to Playlist id
+    //@Column(name="Playlist") private Integer Playlist;
     //Library Persistent ID
     //join column
     @Column(name="Library_ID") private String library_ID;
 
 
     //empty constructor
-    public track(){}
+    public Track(){}
 
-    public track(Integer track_id, String name, String artist, String album, String genre,
-                  Integer year, Integer size, String library_ID) {
+    public Track(Integer track_id, String name, String artist, String album, String genre,
+                 Integer year, Integer size, String library_ID) {
         this.track_id = track_id;
         this.name = name;
         this.artist = artist;

@@ -8,8 +8,8 @@ import java.io.Serializable;
  */
 
 @Entity
-@Table(name="playlist")
-public class playlist implements Serializable{
+@Table(name="Playlist")
+public class Playlist implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +20,8 @@ public class playlist implements Serializable{
     @Column(name="playlist_ID") private Integer playlist_ID;
 
     //Library Persistent ID
-    //join to library
-    @Column(name="library")private Integer library;
+    //join to Library
+    @Column(name="Library")private Integer library;
 
 
     public String getName() {
@@ -57,10 +57,10 @@ public class playlist implements Serializable{
     }
 
 
-    public playlist() {
+    public Playlist() {
     }
 
-    public playlist(String name, Integer ID) {
+    public Playlist(String name, Integer ID) {
         this.name = name;
         this.playlist_ID = playlist_ID;
     }

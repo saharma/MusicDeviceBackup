@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Created by saharmohamedali on 02/05/2017.
  */
-public class library implements Serializable {
+public class Library implements Serializable {
 
 
     @Id
@@ -17,9 +17,9 @@ public class library implements Serializable {
 
     @Column(name="library_persistent_id") private Integer library_persistent_id;
 
-    public library(){}
+    public Library(){}
 
-    public library(Integer library_persistent_id){
+    public Library(Integer library_persistent_id){
         this.library_persistent_id= library_persistent_id;
     }
 
