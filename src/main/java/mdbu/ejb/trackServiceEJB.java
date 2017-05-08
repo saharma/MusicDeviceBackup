@@ -26,10 +26,13 @@ public class trackServiceEJB implements  trackService{
 
     @Override
     public Track getById(Integer id) {
+
         return trackDao.getByID(id);
     }
 
+
     public Collection<?> getAllTracks() {
+
         return trackDao.getAllTracks();
     }
 
