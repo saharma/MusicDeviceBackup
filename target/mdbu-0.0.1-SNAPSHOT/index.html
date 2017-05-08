@@ -10,11 +10,24 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="js/loginReg.js"></script>
     <script src="js/user_crud.js"></script>
+    <script src="js/file_upload.js"></script>
 
 </head>
 <body>
 
 Holla at ya boy
+
+<div id="fileUploadPage" >
+    <h3>File Upload</h3>
+
+    <form enctype="multipart/form-data" method="post">
+        <input name="file" type="file" id="fileUploadB1" /><br>
+        <input type="button" name="upload" value="Upload" id="fileUploadB2"/>
+    </form>
+    <progress></progress>
+    <div class="alert alert-warning" id="alert1" style="display:none">
+        <strong>Warning!</strong> Non excel files will not upload
+    </div>
 
 <p id="welcomeMsg"></p>
 

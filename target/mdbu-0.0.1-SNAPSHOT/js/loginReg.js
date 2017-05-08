@@ -4,7 +4,6 @@
 
 
 jQuery('document').ready(function() {
-    checkPermission();
     $("#loginChoiceButton").click(function () {
         window.location.href = 'login.html';
     });
@@ -21,21 +20,6 @@ jQuery('document').ready(function() {
 
 
 
-    function checkPermission() {
-        $.get('/mdbu-0.0.1-SNAPSHOT/UserSessionServlet', function (data) {
-            var user = JSON.parse(data);
-            var accessLevel = 0;
-            var welcome = document.getElementById('welcomeMsg');
-            if (user != null) {
-                accessLevel = parseInt(user.library_persistent_id);
-                welcome.innerHTML = "Welcome " + user.username;
-            }
-            else {
-                welcome.innerHTML = "Please Login";
-            }
-            permissions(accessLevel);
 
-        });
-    }
 
 });
