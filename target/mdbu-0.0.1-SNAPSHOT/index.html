@@ -2,34 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Music Device Backup</title>
+
     <!--CSS-->
     <link rel="stylesheet" href="css/general.css">
 
     <!--JS-->
+
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="js/loginReg.js"></script>
-    <script src="js/user_crud.js"></script>
-    <script src="js/file_upload.js"></script>
+    <script src="js/login.js"></script>
 
 </head>
+
 <body>
+<div id="loginReg" style="display:block; margin:auto; width: 700px;">
+    <img src="img/homeIcon.png" width="450" style="display:block; margin:auto;">
 
-Holla at ya boy
-
-<div id="fileUploadPage" >
-    <h3>File Upload</h3>
-
-    <form enctype="multipart/form-data" method="post">
-        <input name="file" type="file" id="fileUploadB1" /><br>
-        <input type="button" name="upload" value="Upload" id="fileUploadB2"/>
-    </form>
-    <progress></progress>
-    <div class="alert alert-warning" id="alert1" style="display:none">
-        <strong>Warning!</strong> Non excel files will not upload
+    <br>
+    <div id="loginRegContainer" style="text-align:center;">
+    <button class="loginRegButtons" id="loginChoiceButton">Log In</button>
+    <br><br>
+    <button class="loginRegButtons" id="RegChoiceButton">Register</button>
     </div>
 
-<p id="welcomeMsg"></p>
-
+</div>
 </body>
 </html>

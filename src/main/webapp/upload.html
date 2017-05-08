@@ -8,6 +8,7 @@
     <script src="js/logout.js"></script>
     <script src="js/login.js"></script>
     <script src="js/loginReg.js"></script>
+    <script src="js/file_upload.js"></script>
 
     <!--Datatables JS-->
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
@@ -42,7 +43,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="#">Tracks</a>
+                            <a href="trackLibrary.html">Tracks</a>
                         </li>
                         <li>
                             <a href="playlistLibrary.html">Playlists</a>
@@ -51,7 +52,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="upload.html">Back Up</a>
+                            <a href="upload.html" class="not-active">Back Up</a>
                         </li>
                         <li>
                             <a href="index.html" class="logoutButton">Log Out</a>
@@ -59,46 +60,23 @@
                         <li>
                             <p id="welcomeMsg"> </p>
                         </li>
-
                     </ul>
                 </div>
 
             </nav>
-            <div style = "width: 700px; margin:auto">
-            <button type="button" class="btn libraryButtons" id="showTrackButton">
-                Show Tracks
-            </button>
-            <button type="button" class="btn libraryButtons" id="hideTracksButton" style="display:none">
-                Hide Tracks
-            </button>
-            <button type="button" class="btn libraryButtons" id="addTrackButton">
-                Add Track
-            </button>
-            <button type="button" class="btn libraryButtons" id="updateTrackButton">
-                Update Track
-            </button>
-            <button type="button" class="btn libraryButtons" id="deleteTrackButton">
-                Delete Tracks
-            </button>
+
+
+            <div id="fileUpload" >
+
+                <form enctype="multipart/form-data" method="post">
+                    <input name="file" type="file" id="fileUploadB1" /><br>
+                    <input type="button" name="upload" value="Upload" id="fileUploadB2"/>
+                </form>
+                <div class="alert alert-warning" id="alert1" style="display:none">
+                    <strong>Warning!</strong> Non XML files will not upload
+                </div>
             </div>
 
-            <br>
-
-            <div id="trackData" style = "display:none; width: 850px; margin:auto;">
-                <table id="trackTable" class="table table-striped table-bordered"  cellspacing="0" width="100%">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Track ID</th>
-                        <th>Track Name</th>
-                        <th>Artist</th>
-                        <th>Album</th>
-                        <th>Genre</th>
-                    </tr>
-                    </thead>
-                    <tbody id="trackHolder"> </tbody>
-                </table>
-            </div>
             <grammarly>
                 <div class="_e725ae-textarea_btn _e725ae-not_focused">
                     <div class="_e725ae-transform_wrap">
@@ -110,5 +88,11 @@
         </div>
     </div>
 </div>
+</body>
+</html>
+
+
+
+
 </body>
 </html>

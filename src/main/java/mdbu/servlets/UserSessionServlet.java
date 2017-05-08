@@ -40,15 +40,15 @@ public class UserSessionServlet extends HttpServlet {
 
 
                 if (session.getAttribute("user") == null) response.sendRedirect("login.html");
-                else response.sendRedirect("index.html");
+                else response.sendRedirect("upload.html");
             } catch (Exception e) {
                 System.out.println("User Not Found");
-                response.sendRedirect("home.html");
+                response.sendRedirect("index.html");
             }
         }
         else{                                               // logout
             session.removeAttribute("user");
-            response.sendRedirect("home.html");
+            response.sendRedirect("index.html");
         }
 
 
@@ -70,7 +70,7 @@ public class UserSessionServlet extends HttpServlet {
                     response.setContentType("text/plain");
                     response.setCharacterEncoding("UTF-8");
 
-                    response.sendRedirect("index.html");
+                    response.sendRedirect("upload.html");
                     ObjectMapper mapper = new ObjectMapper();
                     String json = mapper.writeValueAsString(user);
                     response.getWriter().print(json);
@@ -79,7 +79,7 @@ public class UserSessionServlet extends HttpServlet {
 
             }
             else{
-                response.sendRedirect("home.html");
+                response.sendRedirect("index.html");
                 System.out.println("No One logged in");
             }
         }

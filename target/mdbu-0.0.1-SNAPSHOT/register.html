@@ -11,26 +11,27 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="js/loginReg.js"></script>
     <script src="js/user_crud.js"></script>
+    <script src="js/login.js"></script>
 
 </head>
 <body>
 
-<div id="loginbox" style="display:block; margin:auto; width: 700px;" method="post" action="/mdbu-0.0.1-SNAPSHOT/UserSessionServlet" >
+<div id="regbox" style="display:block; margin:auto; width: 700px;" >
     <img src="img/homeIcon.png" width="450" style="display:block; margin:auto;" alt="Logo" />
     <br>
-    <form id="loginform" class="form-vertical" style="text-align:center;">
+    <form id="regform" class="form-vertical" style="text-align:center;">
 
-                    <input type="text" placeholder="Username" id="getUser" name="username"/>
+                    <input type="text" placeholder="Username" id="setUsername" name="username"/>
         <br>
         <br>
-                    <input type="password" placeholder="Password" id="getUserPassword" name="password"/>
+                    <input type="password" placeholder="Password" id="setUserPassword" name="password"/>
        <br>
         <br>
         <div class="form-actions">
-            <span><input type="submit" value="Register" id="logIn" class="loginRegButtons"/></span>
+            <span><input type="submit" value="Register" id="reg" class="loginRegButtons"/></span>
             <br>
             <span><input type="button" value="Home" class="loginRegButtons goToHome"/></span>
-
+            <span><p id="alert2"></p></span>
         </div>
 
     </form>

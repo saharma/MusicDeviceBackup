@@ -14,6 +14,7 @@ $(document).ready(function()
     {
 
 
+
         var username =  $("#setUsername").val();
         var password = $("#setUserPassword").val();
         var library_persistent_id = "69A7F174F7AEE335";
@@ -29,11 +30,14 @@ $(document).ready(function()
                 url: "api/user",
                 success: function () {
                     document.getElementById('alert2').innerHTML = 'User Added';
-                    document.getElementById('alert2').style.display = 'block';
+                    window.location.href = 'login.html';
+                    //document.getElementById('alert2').style.display = 'block';
+
                 },
+
                 error: function(){
                     document.getElementById('alert2').innerHTML = '<strong>Warning!</strong> User Registration Failure';
-                    document.getElementById('alert2').style.display = 'block';
+                   // document.getElementById('alert2').style.display = 'block';
                 },
                 data: JSON.stringify(myUser),
                 contentType: "application/json",
@@ -41,11 +45,10 @@ $(document).ready(function()
         }
         else{
             document.getElementById('alert2').innerHTML = '<strong>Warning!</strong> Please enter username and password';
-            document.getElementById('alert2').style.display = 'block';
+           // document.getElementById('alert2').style.display = 'block';
         }
 
-
-    });
+    })
 
     $("#showUserList").click(function() {
         alert("test");
