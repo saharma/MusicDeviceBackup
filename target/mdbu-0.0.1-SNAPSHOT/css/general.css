@@ -1,5 +1,43 @@
-#pagination a {
-    display:inline-block;
-    margin-right:5px;
+body {
+    background-color: rgba(255, 0, 222, 0.04);
+}
+
+.loginRegButtonsButtons {
+    background: #fa91e5;
+    background-image: -webkit-linear-gradient(top, #fa52aa, #782285);
+    background-image: -moz-linear-gradient(top, #fa52aa, #782285);
+    background-image: -ms-linear-gradient(top, #fa52aa, #782285);
+    background-image: -o-linear-gradient(top, #fa52aa, #782285);
+    background-image: linear-gradient(to bottom, #fa52aa, #782285);
+    -webkit-border-radius: 28px;
+    -moz-border-radius: 28px;
+    border-radius: 28px;
+    font-family: Arial, serif;
+    color: #ffffff;
+    font-size: 34px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width: 50%;
+}
+
+.loginRegButtons:hover {
+    background: #6b1778;
+    text-decoration: none;
+}
+
+.libraryButtons {
+    background: #c306c1;
+    color: #ffffff;
+
+    font-family: Arial, serif;
+}
+
+#trackTable{
+    border: 4px;
+}
+
+.container-fluid{
+
+    background-color: rgba(255, 0, 222, 0.04);
 
 }

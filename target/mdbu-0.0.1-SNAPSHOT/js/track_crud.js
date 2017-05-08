@@ -40,7 +40,7 @@ jQuery('document').ready(function() {
                 });
 
                 $('#trackTable').DataTable({
-                    "aLengthMenu": [[10, 25, 50, 100, 200, 500, 1000, -1], [10, 25, 50, 100, 200, 500, 1000, "All"]],
+                    "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
                     iDisplayLength: 10,
 
                 });
@@ -87,6 +87,7 @@ jQuery('document').ready(function() {
 
 $("#hideTracksButton").click(function() {
     $("#trackData").hide();
+    $("#hideTracksButton").hide();
 });
 
 

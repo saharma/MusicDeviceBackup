@@ -1,0 +1,39 @@
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>Log In</title><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CSS-->
+    <link rel="stylesheet" href="css/general.css">
+
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="js/loginReg.js"></script>
+
+</head>
+<body>
+
+<div id="loginbox" style="display:block; margin:auto; width: 700px;">
+    <img src="img/homeIcon.png" width="450" style="display:block; margin:auto;" alt="Logo" />
+    <br>
+    <form id="loginform" class="form-vertical" method="post" action="" style="text-align:center;">
+
+        <input type="text" placeholder="Username" id="getUserLogin" name="username"/>
+        <br>
+        <br>
+        <input type="password" placeholder="Password" id="getPasswordReLogin" name="password"/>
+        <br>
+        <br>
+        <div class="form-actions">
+            <span><input type="submit" value="Log In" id="login" class="loginRegButtons"/></span>
+            <br>
+            <span><input type="button" value="Home" class="loginRegButtons goToIndex"/></span>
+        </div>
+
+    </form>
+</div>
+
+</body>
+
+</html>
