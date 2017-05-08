@@ -34,8 +34,6 @@ public class UserSessionServlet extends HttpServlet {
                 System.out.println(user.toString());
 
                 session.setAttribute("user", user);
-
-
                 System.out.println("User Entity Stored in session");
 
 
@@ -50,9 +48,6 @@ public class UserSessionServlet extends HttpServlet {
             session.removeAttribute("user");
             response.sendRedirect("index.html");
         }
-
-
-
 
     }
 

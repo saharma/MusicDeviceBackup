@@ -25,9 +25,14 @@ jQuery('document').ready(function() {
     $(".uploadFile").click(function () {
         window.location.href = 'upload.html';
     });
-    $("#login").click(function () {
-        window.location.href = 'upload.html';
+    $("#loginFormButton").click(function () {
+        window.location.href = "upload.html";
     });
+    $("#goToAddTrackButton").click(function () {
+        window.location.href = "userOptions.html";
+    });
+
+
 
 
 

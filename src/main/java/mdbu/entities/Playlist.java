@@ -23,6 +23,13 @@ public class Playlist implements Serializable{
     //join to Library
     @Column(name="Library")private Integer library;
 
+//        ManyToMany(fetch = FetchType.EAGER)
+//    @JoinTable(
+//            name="tracksList",
+//            joinColumns = @JoinColumn(name="playlist_ID", referencedColumnName = "p_ID"),
+//            inverseJoinColumns = @JoinColumn(name="trackID", referencedColumnName = "t_ID")
+//    )
+      public Integer trackID;
 
     public String getName() {
         return name;
