@@ -75,7 +75,7 @@ public class User  implements Serializable {
 
     @Override
     public String toString() {
-        return "UserEntity{" +
+        return "User{" +
                 "username='" + username + '\'' +
                 ", userId=" + userId +
                 ", password='" + password + '\'' +

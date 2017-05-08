@@ -1,8 +1,8 @@
-body {
+html {
     background-color: rgba(255, 0, 222, 0.04);
 }
 
-.loginRegButtonsButtons {
+.loginRegButtons {
     background: #fa91e5;
     background-image: -webkit-linear-gradient(top, #fa52aa, #782285);
     background-image: -moz-linear-gradient(top, #fa52aa, #782285);
@@ -18,18 +18,19 @@ body {
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     width: 50%;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 .loginRegButtons:hover {
     background: #6b1778;
     text-decoration: none;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 .libraryButtons {
-    background: #c306c1;
     color: #ffffff;
-
     font-family: Arial, serif;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 #trackTable{
@@ -40,4 +41,28 @@ body {
 
     background-color: rgba(255, 0, 222, 0.04);
 
+}
+
+
+input {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    box-shadow: 5px 5px 5px #888888;
+}
+
+.goToButtons {
+    font-family: Arial, serif;
+    color: #ffffff;
+    font-size: 10px;
+    background: #fa52aa ;
+}
+
+input[type=button]{
+    width: 200px;
 }

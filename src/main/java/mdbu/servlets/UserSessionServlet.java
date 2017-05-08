@@ -23,7 +23,7 @@ public class UserSessionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session = request.getSession();
-        if(session.getAttribute("userEntity") == null){ // login
+        if(session.getAttribute("user") == null){ // login
             String username = request.getParameter("username");
             String password = request.getParameter("password");
 
@@ -38,16 +38,17 @@ public class UserSessionServlet extends HttpServlet {
 
                 System.out.println("User Entity Stored in session");
 
+
                 if (session.getAttribute("user") == null) response.sendRedirect("login.html");
                 else response.sendRedirect("index.html");
             } catch (Exception e) {
                 System.out.println("User Not Found");
-                response.sendRedirect("login.html");
+                response.sendRedirect("home.html");
             }
         }
         else{                                               // logout
-            session.removeAttribute("userEntity");
-            response.sendRedirect("login.html");
+            session.removeAttribute("user");
+            response.sendRedirect("home.html");
         }
 
 
@@ -69,15 +70,16 @@ public class UserSessionServlet extends HttpServlet {
                     response.setContentType("text/plain");
                     response.setCharacterEncoding("UTF-8");
 
+                    response.sendRedirect("index.html");
                     ObjectMapper mapper = new ObjectMapper();
                     String json = mapper.writeValueAsString(user);
                     response.getWriter().print(json);
-                    System.out.println("Response containing userEntity json written");
+                    System.out.println("Response containing user Entity json written");
                 }
 
             }
             else{
-                response.sendRedirect("login.html");
+                response.sendRedirect("home.html");
                 System.out.println("No One logged in");
             }
         }

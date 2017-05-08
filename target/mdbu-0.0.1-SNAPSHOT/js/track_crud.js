@@ -29,10 +29,10 @@ jQuery('document').ready(function() {
                     $('#trackHolder').append("<tr>" +
                         "<td>" + countColumn + "</td>" +
                         "<td>" + value.track_id + "</td>" +
-                        "<td contenteditable>" + value.name + "</td>" +
-                        "<td contenteditable>" + value.artist + "</td>" +
-                        "<td contenteditable>" + value.album + "</td>" +
-                        "<td contenteditable>" + value.genre + "</td>" +
+                        "<td>" + value.name + "</td>" +
+                        "<td>" + value.artist + "</td>" +
+                        "<td>" + value.album + "</td>" +
+                        "<td>" + value.genre + "</td>" +
                         + "</tr>"
                     );
 

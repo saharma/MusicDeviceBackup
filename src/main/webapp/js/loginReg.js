@@ -11,8 +11,15 @@ jQuery('document').ready(function() {
     $("#RegChoiceButton").click(function () {
         window.location.href = 'register.html';
     });
-    $(".goToIndex").click(function () {
+    $(".goToHome").click(function () {
+        window.location.href = 'home.html';
+    });
+    $(".goToProfile").click(function () {
         window.location.href = 'index.html';
     });
+
+
+
+
 
 });
